@@ -24,6 +24,7 @@ Article.loadAll = articleData => {
   /* OLD forEach():
   articleData.forEach(articleObject => Article.all.push(new Article(articleObject)));
   */
+ articleData.map(articleObject => (new Article(articleObject)));
 
 };
 
@@ -36,10 +37,16 @@ Article.fetchAll = callback => {
 };
 
 Article.numWordsAll = () => {
+
+.map(article => article.body.split ('').length).reduce((a,c) => a+c)
   return Article.all.map().reduce()
 };
 
 Article.allAuthors = () => {
+article.all.map(article => article.author).reduce(author, authors) =>
+
+ // if author not in array, add to counter
+
   return Article.all.map().reduce();
 };
 
