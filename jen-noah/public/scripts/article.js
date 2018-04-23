@@ -21,10 +21,15 @@ Article.prototype.toHtml = function() {
 Article.loadAll = articleData => {
   articleData.sort((a,b) => (new Date(b.publishedOn)) - (new Date(a.publishedOn)))
 
-  /* OLD forEach():
+  forEach()
   articleData.forEach(articleObject => Article.all.push(new Article(articleObject)));
-  */
 
+};
+
+Article.createStats = {
+  totalWords: Article.numWordsAll(),
+  totalAuthors: Article.allAuthors(),
+  wordsPerAuthor: Article.numWordsByAuthor()
 };
 
 Article.fetchAll = callback => {
